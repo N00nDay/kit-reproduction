@@ -24,7 +24,7 @@
       if (result.type === "success") {
         update();
       } else if (result.type === "invalid") {
-        form = result.data;
+        // form = result.data;
         await applyAction(result);
       } else {
         await applyAction(result);
