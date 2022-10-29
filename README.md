@@ -8,7 +8,9 @@ git clone https://github.com/N00nDay/kit-reproduction.git
 npm install
 ```
 
-As it sits the project is set up with my current workaround active on line 27 of `+layout.svelte`.
+As it sits the project is set up as the documents suggest utilizing `applyAction` to update the `form` variable. 
+
+I have a workaround that is getting me by on line 27 of `+layout.svelte`. Just uncomment the line and it will work with the additional typescript error.
 ```
 18 <form
 19   class="space-y-6"
@@ -19,7 +21,7 @@ As it sits the project is set up with my current workaround active on line 27 of
 24       if (result.type === "success") {
 25         update();
 26       } else if (result.type === "invalid") {
-27         form = result.data;
+27         // form = result.data;
 28         await applyAction(result);
 29       } else {
 30         await applyAction(result);
@@ -28,5 +30,3 @@ As it sits the project is set up with my current workaround active on line 27 of
 33   }}
 34 >
 ```
-
-I
